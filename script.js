@@ -13,7 +13,7 @@ cityForm.addEventListener('submit', function(event) {
   }
 
   // Use the correct API endpoint for OpenWeatherMap
-  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=b0189432e17679f079b50b37f03dc2fe`)
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=YOUR_API_TOKEN_KEY`)
     .then(response => response.json())
     .then(data => {
       // Adjust data access back to OpenWeatherMap's response structure
