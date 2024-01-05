@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Forecast</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Weather Forecast</h1>
+  </header>
+  <main>
+    <form id="city-form">
+      <input type="text" id="city-name" placeholder="Enter City Name">
+      <button type="submit">Get Weather</button>
+    </form>
+    <div id="weather-info">
+      <img id="weather-icon" src="icon.png" alt="Weather icon">
+      <h2 id="city-name-display"></h2>
+      <p id="temperature-display"></p>
+      <p id="feels-like-display"></p>
+      <p id="weather-description-display"></p>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
