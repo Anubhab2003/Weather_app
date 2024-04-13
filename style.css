@@ -1,14 +1,33 @@
-body {
+/* body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
+/* *{
+  background-color:rgb(22, 23, 22);
+} */
+/* 
+button.button_submit{
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+nav{
+  background-color: rgb(55, 228, 84);
+  background-color: rgb(22, 230, 71);
+  background-color: rgb(57, 233, 113);
+  color:black;
+}
+
 
 header {
-  background-color: #333;
-  color: #fff;
+   background-color:black; 
+  
+
+  color: rgb(251, 5, 42);
   padding: 15px;
   text-align: center;
+  text-emphasis-color: black;
+  text-shadow: 4px 2px 2px rgba(4, 6, 2, 0.853);
 }
 
 main {
@@ -61,4 +80,73 @@ main {
   width: 100px;
   height: 100px;
   margin-bottom: 20px;
+}
+*/
+/* Updated CSS for Weather Forecast Application */
+/* Updated CSS with Vermillion and Russian Green */
+/* Updated CSS with Gradient Background */
+/* Updated CSS with Inspired Color Palette */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #8EE4AF, #379683); /* Gradient from light green to teal */
+  color: #333; /* Dark text for readability */
+}
+
+header {
+  background-color: transparent; /* Transparent header to showcase gradient */
+  color: #EDF5E1; /* Off-white text for header */
+  padding: 15px;
+  text-align: center;
+}
+
+nav {
+  background-color: transparent; /* Transparent navigation to showcase gradient */
+  padding: 10px 0;
+  text-align: center;
+}
+
+nav a {
+  color: #EDF5E1; /* Off-white text for navigation links */
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+button.button_submit {
+  background-color: #5CDB95; /* Soft green for buttons */
+  color: #907163; /* Warm brown text for buttons */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Rest of the styles remain unchanged */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto; /* The main content will grow to fill the space if there's extra room */
+}
+
+
+
+
+footer {
+  flex-shrink: 0; /* The footer won't shrink and will stay at the bottom */
+  /* Add your existing footer styles here */
+  color: #EDF5E1; /* Off-white text for navigation links */
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  text-align: center;
 }
