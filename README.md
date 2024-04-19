@@ -1,3 +1,8 @@
+You can access my app by this website: https://weather-app-pied-zeta.vercel.app/
+OR you can clone here
+
+
+
 # Weather_app
 Hey Awesome people , You can use my app by following steps:
 
