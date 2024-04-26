@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+    }
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 0.5s ease-out; /* Add fade-in animation */
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    h2 {
+      text-align: center;
+    }
+    form {
+      margin-top: 20px;
+    }
+    label, input, textarea {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    input[type="submit"] {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s; /* Add transition effect */
+    }
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Contact Us</h2>
+  <form id="contact-form">
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="email" required>
+    
+    <label for="feedback">Feedback:</label>
+    <textarea id="feedback" name="feedback" rows="4" required></textarea>
+    
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("-s-VrxftFMXRV6ILU"); // Replace YOUR_USER_ID with your actual Email.js user ID
+
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      // Get the user's input
+      const formData = new FormData(this);
+      const email = formData.get('email');
+      const feedback = formData.get('feedback');
+
+      // Send email
+      emailjs.send("service_u4i0lvd", "template_yniy389", {
+        to_email: "anubhabchowdhury01@gmail.com", // Replace with your email address
+        from_email: email,
+        feedback: feedback
+      })
+      .then(function(response) {
+        alert('Your feedback has been submitted successfully!');
+        document.getElementById('contact-form').reset();
+      }, function(error) {
+        alert('Oops! Something went wrong. Please try again later.');
+        console.error('Error:', error);
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
