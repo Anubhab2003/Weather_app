@@ -145,8 +145,14 @@ footer {
   flex-shrink: 0; /* The footer won't shrink and will stay at the bottom */
   /* Add your existing footer styles here */
   color: #EDF5E1; /* Off-white text for navigation links */
-  text-decoration: none;
+  
   margin: 0 15px;
   font-weight: bold;
   text-align: center;
+  
+  
+}
+footer a{
+  text-decoration: none;
+  color: white;
 }
