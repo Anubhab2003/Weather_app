@@ -1,158 +1,97 @@
-/* body {
-  font-family: Arial, sans-serif;
+*{
   margin: 0;
   padding: 0;
+  font-family: 'Poppins',sans-serif;
+  box-sizing: border-box;
 }
-/* *{
-  background-color:rgb(22, 23, 22);
-} */
-/* 
-button.button_submit{
-  transition-duration: 0.4s;
-  cursor: pointer;
+body{
+  background-color: #222;
 }
-nav{
-  background-color: rgb(55, 228, 84);
-  background-color: rgb(22, 230, 71);
-  background-color: rgb(57, 233, 113);
-  color:black;
-}
-
-
-header {
-   background-color:black; 
-  
-
-  color: rgb(251, 5, 42);
-  padding: 15px;
-  text-align: center;
-  text-emphasis-color: black;
-  text-shadow: 4px 2px 2px rgba(4, 6, 2, 0.853);
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-}
-
-#city-form {
-  display: flex;
-  margin-bottom: 20px;
-}
-
-#city-name {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-#city-form button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  background-color: #333;
+.card{
+  width:90% ;
+  max-width: 470px;
+  background:linear-gradient(135deg,#00feba,#5b548a);
   color: #fff;
-  cursor: pointer;
+  margin: 100px auto 0;
+  border-radius: 20px;
+  padding: 40px 35px;
+  text-align: center;
 }
-
-#weather-info {
-  border: 1px solid #ccc;
-  padding: 20px;
-  border-radius: 5px;
-  display: none;
+.search{
+  width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 }
-
-#weather-info h2 {
-  margin-bottom: 10px;
+.search input{
+  border: 0;
+  outline: 0;
+  background: #ebfffc;
+  color: #555;
+  padding: 10px 25px;
+  height: 60px;
+  border-radius: 30px;
+  flex: 1;
+  margin-right: 16px;
+  font-size: 18px;
 }
-
-#weather-info p {
-  margin-bottom: 5px;
-}
-
-#weather-icon {
-  width: 100px;
-  height: 100px;
-  margin-bottom: 20px;
-}
-*/
-/* Updated CSS for Weather Forecast Application */
-/* Updated CSS with Vermillion and Russian Green */
-/* Updated CSS with Gradient Background */
-/* Updated CSS with Inspired Color Palette */
-body {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(to bottom, #8EE4AF, #379683); /* Gradient from light green to teal */
-  color: #333; /* Dark text for readability */
-}
-
-header {
-  background-color: transparent; /* Transparent header to showcase gradient */
-  color: #EDF5E1; /* Off-white text for header */
-  padding: 15px;
-  text-align: center;
-}
-
-nav {
-  background-color: transparent; /* Transparent navigation to showcase gradient */
-  padding: 10px 0;
-  text-align: center;
-}
-
-nav a {
-  color: #EDF5E1; /* Off-white text for navigation links */
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: bold;
-}
-
-button.button_submit {
-  background-color: #5CDB95; /* Soft green for buttons */
-  color: #907163; /* Warm brown text for buttons */
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
+.search button{
+  border: 0;
+  outline: 0;
+  background: #ebfffc;
+  border-radius: 50%;
+  width: 60px;
+  height:60px;
   cursor: pointer;
 }
+.search button img{
+  width:16px;
 
-/* Rest of the styles remain unchanged */
-html, body {
-  height: 100%;
-  margin: 0;
 }
+.weather-icon{
+  width:170px;
+  margin-top: 30px;
 
-body {
+}
+.weather h1{
+  font-size: 80px;
+  font-weight: 500;
+}
+.weather h2{
+  font-size: 45px;
+  font-weight: 400;
+  margin-top: -10px;
+}
+.details{
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 20px;
+  margin-top:50px;
+
 }
-
-main {
-  flex: 1 0 auto; /* The main content will grow to fill the space if there's extra room */
+.col{
+  display:flex;
+  align-items: center;
+  text-align: left;
 }
+.col img{
+  width:40px;
+  margin-right: 10px;
 
-
-
-
-footer {
-  flex-shrink: 0; /* The footer won't shrink and will stay at the bottom */
-  /* Add your existing footer styles here */
-  color: #EDF5E1; /* Off-white text for navigation links */
-  
-  margin: 0 15px;
-  font-weight: bold;
-  text-align: center;
-  
-  
 }
-footer a{
-  text-decoration: none;
-  color: white;
+.humidity, .wind{
+  font-size: 28px;
+  margin-top: -6px;
+}
+.weather{
+  display: none;
+}
+.error{
+  text-align: left;
+  margin-left: 10px;
+  font-size: 14px;
+  margin-top: 10px;
+  display: none;
+
 }

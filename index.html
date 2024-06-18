@@ -3,52 +3,89 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="res/sun.png" type="image/x-icon">
+  <title>Weather App</title>
   <link rel="stylesheet" href="style.css">
-  <title>Weather Forecast</title>
-  <link rel="icon" href="icon.png" type="image/icon type">
-  
-
-  
-  
 </head>
 <body>
-  
-  <header>
-    <h1>Weather Forecast</h1>
-  </header>
-  <hr>
-  <nav>
-    <a href="index.html">Home</a>
-    &nbsp;
-    <a href="#">Doc</a>
-    &nbsp;
-    <a href="https://github.com/Anubhab2003/Weather_app" target="blank">Github</a>
-    
-  </nav>
-  
-  <main>
-    <form id="city-form">
-      <input type="text" id="city-name" placeholder="Enter City Name">
-      <button class="button_sumit"type="submit" hover="true">Get Weather</button>
-    </form>
-    <div id="weather-info">
-      <img id="weather-icon" src="icon.png" alt="Weather icon">
-      <h2 id="city-name-display"></h2>
-      <p id="temperature-display"></p>
-      <p id="feels-like-display"></p>
-      <p id="weather-description-display"></p>
+  <div class="card">
+    <div class="search">
+      <input type="text" placeholder="Enter City name",spellcheck="false">
+      <button><img src="/images/search.png" alt=""></button>
     </div>
-  </main>
-  <script src="script.js"></script>
-</body>
-<footer>
-  <a href="#">faqs</a>
-  &nbsp;
-  &nbsp;
-  <a href="contactup.html">Contact us</a>
-  &nbsp;
-  &nbsp;
-  <a href="#">&copy 2024 Anubhab Chowdhury</a>
+    
+    <div class="weather">
+      <img src="images/rain.png" alt="" class="weather-icon">
+      <h1 class="temp">22°C</h1>
+      <h2 class="city">Silliguri</h2>
+      <div class="details">
+        <div class="col">
+          <img src="images/humidity.png" alt="">
+          <div>
+            <p class="humidity">50%</p>
+            <p>Humidity</p>
+          </div>
+        </div>
+        <div class="col">
+          <img src="images/wind.png" alt="">
+          <div>
+            <p class="wind">15 km/h</p>
+            <p>Wind Speed</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-</footer>
+
+
+  <script>
+    const apikey="b0189432e17679f079b50b37f03dc2fe";
+    const apiurl="https://api.openweathermap.org/data/2.5/weather?&units=metric&q=";
+    const searchbox=document.querySelector(".search input");
+    const searchbtn=document.querySelector(".search button");
+    const weathericon=document.querySelector(".weather-icon");
+
+
+
+    async function checkWeather(city){
+      const response=await fetch(apiurl+city+`&appid=${apikey}`);
+      
+      var data=await response.json();
+      console.log(data);
+      document.querySelector(".city").innerHTML=data.name;
+      document.querySelector(".temp").innerHTML=Math.round(data.main.temp)+"°C";
+      document.querySelector(".humidity").innerHTML=data.main.humidity+"%";
+      document.querySelector(".wind").innerHTML=data.wind.speed+" km/h";
+
+
+
+      if(data.weather[0].main == "Clouds"){
+        weathericon.scr="images/clouds.png";
+      }else if(data.weather[0].main == "Clear"){
+        weathericon.src="images/clear.png";
+      }
+      else if(data.weather[0].main == "Rain"){
+        weathericon.src="images/rain.png";
+      }
+      else if(data.weather[0].main == "Drizzle"){
+        weathericon.src="images/drizzle.png";
+      }
+      else if(data.weather[0].main == "Mist"){
+        weathericon.src="images/mist.png";
+      }
+      else if(data.weather[0].main == "Snow"){
+        weathericon.src="images/snow.png";
+      }
+      document.querySelector(".weather").style.display="block"
+      
+
+    }
+    
+searchbtn.addEventListener("click",()=>{
+  checkWeather(searchbox.value);
+})
+    checkWeather();
+  </script>
+</body>
 </html>
