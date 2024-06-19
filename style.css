@@ -240,3 +240,75 @@ body {
     font-size: 28px;
   }
 }
+/* Smartwatch devices (200px and down) */
+@media (max-width: 200px) {
+  .card {
+    width: 100%;
+    max-width: 200px;
+    margin: 10px auto 0;
+    padding: 10px 10px;
+    border-radius: 15px;
+  }
+
+  .search {
+    flex-direction: column;
+  }
+
+  .search input {
+    height: 30px;
+    font-size: 12px;
+    padding: 5px 10px;
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+
+  .search button {
+    width: 30px;
+    height: 30px;
+  }
+
+  .search button img {
+    width: 10px;
+  }
+
+  .weather-icon {
+    width: 50px;
+    margin-top: 10px;
+  }
+
+  .weather h1 {
+    font-size: 20px;
+  }
+
+  .weather h2 {
+    font-size: 18px;
+    margin-top: -5px;
+  }
+
+  .details {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .col {
+    margin-bottom: 10px;
+  }
+
+  .col img {
+    width: 20px;
+  }
+
+  .humidity, .wind {
+    font-size: 14px;
+  }
+
+  .details div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .weather {
+    display: block;
+  }
+}
